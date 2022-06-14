@@ -47,22 +47,23 @@ unsigned int binary_gcd_itr(unsigned int x, unsigned int y) {
     // if x and y are even, doubles t and halves x and y, and finally multiply
     // (x or y) by t
     while (1) {
-        if (x == 0)
+        if (x == 0) {
             return y * t;
-        else if (y == 0)
+        } else if (y == 0) {
             return x * t;
-        else if ((x % 2 == 0) && (y % 2 == 0)) {
+        } else if ((x % 2 == 0) && (y % 2 == 0)) {
             x = x / 2;
             y = y / 2;
             t = t * 2;
-        } else if (x % 2 == 0)
+        } else if (x % 2 == 0) {
             x = x / 2;
-        else if (y % 2 == 0)
+        } else if (y % 2 == 0) {
             y = y / 2;
-        else if (y >= x)
+        } else if (y >= x) {
             y = (y - x) / 2;
-        else
+        } else {
             x = (x - y) / 2;
+        }
     }
 }
 
