@@ -32,7 +32,7 @@ unsigned int binary_gcd_rec(unsigned int x, unsigned int y)
   else if (mod2(x) && mod2(y))
     return 2 * binary_gcd_rec(x / 2, y / 2);
   else if (mod2(x))
-    return binary_gcd_rec(x / 2, y);6
+    return binary_gcd_rec(x / 2, y);
   else if (mod2(y))
     return binary_gcd_rec(x, y / 2);
   else if (y >= x)
