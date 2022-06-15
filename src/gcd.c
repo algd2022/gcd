@@ -15,7 +15,7 @@ unsigned int binary_gcd_rec(unsigned int x, unsigned int y){
 unsigned int binary_gcd_itr(unsigned int x, unsigned int y){
 }
 */
-
+//
 
 int main(){
   unsigned int i, j, c;
