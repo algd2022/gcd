@@ -20,7 +20,7 @@ unsigned int binary_gcd_itr(unsigned int x, unsigned int y){
 int main(){
   unsigned int i, j, c;
 
-
+  i = 5;
   c = 0;
   for(i = 1; i <= n; i++){
     for(j = i + 1; j <= n; j++){
