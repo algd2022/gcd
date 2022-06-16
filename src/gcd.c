@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-const int n = 1000;
+const int n = 10000;
 
 unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y){
+  if (x == 0) return y;
+  return Euclidean_gcd_rec(y % x, x);
 }
 
 /*
@@ -20,7 +22,7 @@ unsigned int binary_gcd_itr(unsigned int x, unsigned int y){
 int main(){
   unsigned int i, j, c;
 
-  i = 9;
+
   c = 0;
   for(i = 1; i <= n; i++){
     for(j = i + 1; j <= n; j++){
