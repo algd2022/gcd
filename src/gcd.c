@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-const int n = 1000;
+const int n = 1000;//一生変わらない
 
 unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y){
   if(x==0){
