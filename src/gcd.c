@@ -3,9 +3,14 @@
 const int n = 1000;
 
 unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y){
- if(x == 0) return y;
- return Euclidean_gcd_rec(y % x, x);
+    while(x != 0 ){
+        unsigned int z = x;
+        x = y % x;
+        y = z;
+    }
+    return y;
 }
+
 
 /*
 unsigned int Euclidean_gcd_itr(unsigned int x, unsigned int y){
@@ -36,3 +41,4 @@ int main(){
   printf("%f\n", (double) c / (n * n));
   return 0;
 }
+
