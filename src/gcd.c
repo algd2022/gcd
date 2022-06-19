@@ -9,16 +9,22 @@ unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y) {
         return Euclidean_gcd_rec(y % x, x);
 }
 
-/*
+
 unsigned int Euclidean_gcd_itr(unsigned int x, unsigned int y){
+    while(y != 0){
+        unsigned int temp = y;
+        y = x % y;
+        x = temp;
+    }
+    return x;
 }
 
-unsigned int binary_gcd_rec(unsigned int x, unsigned int y){
-}
+// unsigned int binary_gcd_rec(unsigned int x, unsigned int y){
+// }
 
-unsigned int binary_gcd_itr(unsigned int x, unsigned int y){
-}
-*/
+// unsigned int binary_gcd_itr(unsigned int x, unsigned int y){
+// }
+
 
 int main() {
     unsigned int i, j, c;
