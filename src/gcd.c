@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-const unsigned int n = 1000;
+const unsigned int n = 10000;
 
 unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y) {
   if (x == 0) return y;
@@ -73,11 +73,11 @@ int main() {
       // if (Euclidean_gcd_itr(i, j) == 1) {
       //   c++;
       // }
-      if (binary_gcd_rec(i, j) == 1) {
+      // if (binary_gcd_rec(i, j) == 1) {
+      //   c++;
+      // }
+      if (binary_gcd_itr(i, j) == 1) {
         c++;
-      }
-      if (binary_gcd_rec(i, j) != Euclidean_gcd_rec(i, j)) {
-        printf("%d %d\n", i, j);
       }
     }
   }
