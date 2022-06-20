@@ -67,18 +67,18 @@ int main() {
   c = 0;
   for (i = 1; i <= n; i++) {
     for (j = i + 1; j <= n; j++) {
-      // if(Euclidean_gcd_rec(i, j) == 1){
-      //   c++;
-      // }
+      if(Euclidean_gcd_rec(i, j) == 1){
+        c++;
+      }
       // if (Euclidean_gcd_itr(i, j) == 1) {
       //   c++;
       // }
       // if (binary_gcd_rec(i, j) == 1) {
       //   c++;
       // }
-      if (binary_gcd_itr(i, j) == 1) {
-        c++;
-      }
+      // if (binary_gcd_itr(i, j) == 1) {
+      //   c++;
+      // }
     }
   }
   c = 2 * c + 1;
