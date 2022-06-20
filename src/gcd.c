@@ -3,6 +3,10 @@
 const int n = 1000;
 
 unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y){
+  if(y == 0)
+    return x;
+  else
+    return Euclidean_gcd_rec(y, x % y);
 }
 
 /*
