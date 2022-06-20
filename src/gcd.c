@@ -20,10 +20,16 @@ unsigned int binary_gcd_tail_rec(unsigned int x, unsigned int y,
                                  unsigned int mag) {
   if (x == 0) return y << mag;
   if (y == 0) return x << mag;
-  if ((x & 1) == 0 && (y & 1) == 0)
-    return binary_gcd_tail_rec(x >> 1, y >> 1, mag + 1);
-  if ((x & 1) == 0) return binary_gcd_tail_rec(x >> 1, y, mag);
-  if ((y & 1) == 0) return binary_gcd_tail_rec(x, y >> 1, mag);
+  if ((x & 1) == 0 || (y & 1) == 0) {
+    unsigned int x_zero_count = __builtin_ctzll(x);
+    unsigned int y_zero_count = __builtin_ctzll(y);
+    if (x_zero_count > y_zero_count)
+      return binary_gcd_tail_rec(x >> x_zero_count, y >> y_zero_count,
+                                 y_zero_count + mag);
+    else
+      return binary_gcd_tail_rec(x >> x_zero_count, y >> y_zero_count,
+                                 x_zero_count + mag);
+  }
   if (x >= y) return binary_gcd_tail_rec((x - y) >> 1, y, mag);
   return binary_gcd_tail_rec((y - x) >> 1, x, mag);
 }
@@ -67,10 +73,10 @@ int main() {
       // if (Euclidean_gcd_itr(i, j) == 1) {
       //   c++;
       // }
-      if (binary_gcd_itr(i, j) == 1) {
+      if (binary_gcd_rec(i, j) == 1) {
         c++;
       }
-      if (binary_gcd_itr(i, j) != Euclidean_gcd_rec(i, j)) {
+      if (binary_gcd_rec(i, j) != Euclidean_gcd_rec(i, j)) {
         printf("%d %d\n", i, j);
       }
     }
