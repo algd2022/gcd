@@ -35,4 +35,3 @@ int main(){
   printf("%f\n", (double) c / (n * n));
   return 0;
 }
-//tester
