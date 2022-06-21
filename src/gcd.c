@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-const int n = 1000;
+const int n = 10000;
 
 unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y){
-    return 0;
+    if(x == 0) return y;
+    return Euclidean_gcd_rec(y % x, x);
 }
 
 /*
