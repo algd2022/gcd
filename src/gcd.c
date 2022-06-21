@@ -2,9 +2,6 @@
 
 const unsigned int n = 10000;
 
-unsigned int Euclidean_gcd_rec(unsigned int x, unsigned int y){
-}
-
 unsigned int Euclidean_gcd_itr(unsigned int x, unsigned int y){
   while (x != 0)
   {
@@ -34,7 +31,7 @@ int main(){
   c = 0;
   for(i = 1; i <= n; i++){
     for(j = i + 1; j <= n; j++){
-      if(Euclidean_gcd_rec(i, j) == 1){
+      if(Euclidean_gcd_itr(i, j) == 1){
         c++;
       }
     }
